@@ -1,0 +1,43 @@
+{
+  "name": "ultrathink-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Ultrathink — save and search your knowledge base from Claude Desktop, Claude Code, and any MCP-compatible client.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "ultrathink-mcp": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ultrathink",
+    "knowledge-base",
+    "second-brain",
+    "pkm",
+    "note-taking",
+    "claude",
+    "claude-code",
+    "anthropic"
+  ],
+  "author": "Chris Wright <chris@fiftyfiveandfive.com>",
+  "license": "MIT",
+  "homepage": "https://tryultrathink.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fifty-Five-and-Five/ultrathink-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fifty-Five-and-Five/ultrathink-mcp/issues"
+  }
+}
