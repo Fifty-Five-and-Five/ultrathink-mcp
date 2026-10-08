@@ -1,6 +1,6 @@
 {
   "name": "ultrathink-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for Ultrathink — save and search your knowledge base from Claude Desktop, Claude Code, and any MCP-compatible client.",
   "type": "module",
   "main": "index.js",

@@ -18,7 +18,6 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
-import { createHash } from 'crypto';
 import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -52,11 +51,6 @@ function loadConfig() {
   );
 }
 
-// Get device key hash
-function getDeviceKeyHash(config) {
-  return createHash('sha256').update(config.deviceKey).digest('hex');
-}
-
 // API call helper
 async function apiCall(endpoint, payload) {
   const config = loadConfig();
@@ -66,9 +60,10 @@ async function apiCall(endpoint, payload) {
     headers: {
       'Content-Type': 'application/json',
     },
+    // The server hashes the key and looks it up.
     body: JSON.stringify({
-      deviceKeyHash: getDeviceKeyHash(config),
       ...payload,
+      deviceKey: config.deviceKey,
     }),
   });
   
@@ -85,7 +80,7 @@ async function apiCall(endpoint, payload) {
 const server = new Server(
   {
     name: 'ultrathink-mcp',
-    version: '1.0.0',
+    version: '1.0.1',
   },
   {
     capabilities: {
