@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "bin": {
-    "ultrathink-mcp": "./index.js"
+    "ultrathink-mcp": "index.js"
   },
   "files": [
     "index.js",
